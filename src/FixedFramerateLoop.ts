@@ -13,7 +13,7 @@ interface Config {
   maxLoopJump?: number;
 }
 
-export class FixedFrameLoop {
+export class FixedFramerateLoop {
   private readonly requestAnimationFrame;
   private readonly cancelAnimationFrame;
   private readonly maxLoopJump;

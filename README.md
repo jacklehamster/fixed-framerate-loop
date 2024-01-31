@@ -20,7 +20,7 @@ fixedFrameRateLoop.startLoop((time, render) => {
 })
 ```
 
-![](https://jacklehamster.github.io/bun-template/icon.png)
+![](https://jacklehamster.github.io/fixed-framerate-loop/icon.png)
 ## Install bun
 
 https://bun.sh/
@@ -40,8 +40,8 @@ curl -fsSL https://bun.sh/install | bash
 
 ## Run example
 
-[https://jacklehamster.github.io/fixed-frame-loop/example/](https://jacklehamster.github.io/fixed-frame-loop/example/)
+[https://jacklehamster.github.io/fixed-framerate-loop/example/](https://jacklehamster.github.io/fixed-framerate-loop/example/)
 
 ## Github Source
 
-[https://github.com/jacklehamster/fixed-frame-loop/](https://github.com/jacklehamster/fixed-frame-loop/)
+[https://github.com/jacklehamster/fixed-framerate-loop/](https://github.com/jacklehamster/fixed-framerate-loop/)

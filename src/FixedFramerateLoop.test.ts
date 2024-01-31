@@ -1,6 +1,6 @@
-import { FixedFrameLoop } from './FixedFrameLoop';
+import { FixedFramerateLoop } from './FixedFramerateLoop';
 
-describe('FixedFrameLoop', () => {
+describe('FixedFramerateLoop', () => {
   let requestAnimationFrameMock: jest.Mock;
   let cancelAnimationFrameMock: jest.Mock;
 
@@ -14,7 +14,7 @@ describe('FixedFrameLoop', () => {
     it('should start and cancel the loop correctly', () => {
       const frameDuration = 100;
       const loopCallbackMock = jest.fn();
-      const frameLoop = new FixedFrameLoop(
+      const frameLoop = new FixedFramerateLoop(
         {
           requestAnimationFrame: requestAnimationFrameMock,
           cancelAnimationFrame: cancelAnimationFrameMock,

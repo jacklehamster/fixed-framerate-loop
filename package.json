@@ -17,7 +17,7 @@
     "type": "git",
     "url": "git@github.com:jacklehamster/fixed-framerate-loop.git"
   },
-  "homepage": "<fill in homepage>",
+  "homepage": "https://jacklehamster.github.io/fixed-framerate-loop/",
   "author": {
     "name": "Jack Le Hamster",
     "email": "jacklehamster@gmail.com"

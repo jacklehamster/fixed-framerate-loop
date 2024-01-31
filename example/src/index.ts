@@ -1,4 +1,4 @@
-import { FixedFrameLoop } from "fixed-framerate-loop";
+import { FixedFramerateLoop } from "fixed-framerate-loop";
 
 const boxes = new Array(100000).fill(null).map(() => ({
   x: Math.random() * 1000,
@@ -14,7 +14,7 @@ export function animate(canvas: HTMLCanvasElement, frameRate?: number) {
     return;
   }
   context.fillStyle = "black";
-  const fixedFrameLoop = new FixedFrameLoop();
+  const fixedFrameLoop = new FixedFramerateLoop();
 
   return fixedFrameLoop.startLoop((time, render) => {
     boxes.forEach(box => {

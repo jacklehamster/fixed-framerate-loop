@@ -35,7 +35,6 @@ export class FixedFramerateLoop {
   } = {}) {
     const frameDuration = options.frameDuration ?? (options.frameRate ? MILLIS_PER_SEC / options.frameRate : undefined) ?? DEFAULT_FRAME_DURATION;
     let timeOffset = 0; //  used to offset the time, in case we paused for too long
-    let gameTime: DOMHighResTimeStamp = 0;   //  the time the game think it is
 
     function limit(loopCount: number, maxLoopJump: number) {
       if (loopCount > maxLoopJump) {
@@ -46,9 +45,13 @@ export class FixedFramerateLoop {
     }
 
     const { maxLoopJump, requestAnimationFrame, cancelAnimationFrame } = this;
+
+    let gameTime: DOMHighResTimeStamp = 0;   //  the time the game think it is
     const loop: FrameRequestCallback = time => {
       handle = requestAnimationFrame(loop);
-      const loopCount = limit(Math.round((time + timeOffset - gameTime) / frameDuration), maxLoopJump);
+      const loopCount = limit(
+        Math.round((time + timeOffset - gameTime) / frameDuration),
+        maxLoopJump);
 
       for (let i = 0; i < loopCount; i++) {
         gameTime += frameDuration;

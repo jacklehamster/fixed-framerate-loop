@@ -1,7 +1,9 @@
-# bun-template
-[![npm version](https://badge.fury.io/js/bun-template.svg)](https://www.npmjs.com/package/bun-template)
+# fixed-framerate-loop
+[![npm version](https://badge.fury.io/js/fixed-framerate-loop.svg)](https://www.npmjs.com/package/fixed-framerate-loop)
 
-Bun template for creating projects using bunjs
+A simple TypeScript class that runs requestAnimationFrame at fixed frameRate, adapting to screen refresh rate by calling the loop more or less multiple times per frame.
+
+This is used by [motor-loop](https://github.com/jacklehamster/motor-loop), which is a more elaborate game event scheduler.
 
 ![](https://jacklehamster.github.io/bun-template/icon.png)
 ## Install bun
@@ -23,8 +25,8 @@ curl -fsSL https://bun.sh/install | bash
 
 ## Run example
 
-[https://jacklehamster.github.io/bun-template/example/](https://jacklehamster.github.io/bun-template/example/)
+[https://jacklehamster.github.io/fixed-frame-loop/example/](https://jacklehamster.github.io/fixed-frame-loop/example/)
 
 ## Github Source
 
-[https://github.com/jacklehamster/bun-template/](https://github.com/jacklehamster/bun-template/)
+[https://github.com/jacklehamster/fixed-frame-loop/](https://github.com/jacklehamster/fixed-frame-loop/)

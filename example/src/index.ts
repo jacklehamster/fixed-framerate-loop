@@ -1,3 +1,6 @@
-import { Hello } from "bun-template";
+import { FixedFrameLoop } from "fixed-frame-loop";
 
-export { Hello };
+
+const fixedFrameLoop = new FixedFrameLoop();
+
+fixedFrameLoop.startLoop();

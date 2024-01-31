@@ -2,8 +2,45 @@
   <head>
     <title>Fixed Framerate Loop</title>
   </head>
+  <style>
+    #code {
+      white-space: pre;
+      border: 1px solid silver;
+    }
+  </style>
   <body>
+    <a target="_blank" href="https://github.com/jacklehamster/fixed-framerate-loop">github.com/jacklehamster/fixed-framerate-loop</a>
+    <a href="https://www.npmjs.com/package/fixed-framerate-loop"><img src="https://badge.fury.io/js/fixed-framerate-loop.svg"></img></a>
+    <hr>
+    <input id="knob" type="range" value="60" min="1" max="120" step="1" />
+    <div id="fps"></div>
+    <div id="code"></div>
+    <canvas id="canvas" width="800" height="600"></canvas>
   </body>
   <script type="module">
-  </script>
+    import { animate } from './dist/index.js';
+    document.getElementById("fps").textContent = "default framerate = ~60fps";
+    const canvas = document.getElementById("canvas");
+    const code = document.getElementById("code");
+    let stop = animate(canvas);
+    const knob = document.getElementById("knob");
+    knob.addEventListener("input", () => {
+      document.getElementById("fps").textContent = knob.value + "fps";
+      updateCode(knob.value);
+      stop();
+      stop = animate(canvas, knob.value);
+    });
+    updateCode("undefined");
+
+    function updateCode(frameRate) {
+      code.textContent = `
+        fixedFrameLoop.startLoop((time, render) => {
+          moveElements();
+          if (render) {
+            renderElements();
+          }
+        }, { frameRate: ${frameRate} })
+      `;
+    }
+</script>
 </html>

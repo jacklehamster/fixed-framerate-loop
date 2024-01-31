@@ -5,6 +5,21 @@ A simple TypeScript class that runs requestAnimationFrame at fixed frameRate, ad
 
 This is used by [motor-loop](https://github.com/jacklehamster/motor-loop), which is a more elaborate game event scheduler.
 
+## Usage
+
+```es6
+const fixedFrameRateLoop = new FixedFrameRateLoop();
+
+fixedFrameRateLoop.startLoop((time, render) => {
+  //  perform some action
+  if (render) {
+    //  do rendering
+  }
+}, {
+  frameRate: 60,  //  optional, default is ~60fps (frame duration: 16.5ms)
+})
+```
+
 ![](https://jacklehamster.github.io/bun-template/icon.png)
 ## Install bun
 

@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "outDir": "dist",
-    "rootDirs": ["example"],
+    "rootDir": "",
     "lib": ["ESNext"],
     "module": "esnext",
     "target": "esnext",
@@ -22,5 +22,5 @@
   "include": [
     "**/*.ts",
     "**/*.tsx",
-  ]
+  ],
 }

@@ -2,7 +2,7 @@
   "name": "fixed-framerate-loop",
   "module": "src/index.ts",
   "description": "A simple TypeScript class that runs requestAnimationFrame at fixed frameRate, adapting to screen refresh rate by calling the loop more or less multiple times per frame.",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "keywords": [
     "bun",
     "bunjs",

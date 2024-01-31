@@ -1,6 +1,8 @@
 # fixed-framerate-loop
 [![npm version](https://badge.fury.io/js/fixed-framerate-loop.svg)](https://www.npmjs.com/package/fixed-framerate-loop)
 
+![metronome](https://jacklehamster.github.io/fixed-framerate-loop/icon.png)
+
 A simple TypeScript class that runs requestAnimationFrame at fixed frameRate, adapting to screen refresh rate by calling the loop more or less multiple times per frame.
 
 This is used by [motor-loop](https://github.com/jacklehamster/motor-loop), which is a more elaborate game event scheduler.
@@ -62,7 +64,6 @@ fixedFrameRateLoop.startLoop((time, render) => {
 })
 ```
 
-![](https://jacklehamster.github.io/fixed-framerate-loop/icon.png)
 ## Install bun
 
 https://bun.sh/

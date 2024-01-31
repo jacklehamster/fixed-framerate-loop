@@ -7,11 +7,12 @@
     "bun",
     "bunjs",
     "typescript",
-    "template",
-    "npm",
-    "np",
-    "publish",
-    "git"
+    "framerate",
+    "requestAnimationFrame",
+    "typescript",
+    "game",
+    "loop",
+    "metronome"
   ],
   "repository": {
     "type": "git",

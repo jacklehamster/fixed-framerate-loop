@@ -1,34 +1,34 @@
 // /Users/vincent/fixed-framerate-loop/example/node_modules/fixed-framerate-loop/dist/index.js
-var h = 1000;
-var W = 16.5;
-var X = 10;
+var $ = 1000;
+var Q = 16.5;
+var N = 10;
 
-class Y {
+class V {
   requestAnimationFrame;
   cancelAnimationFrame;
   maxLoopJump;
-  constructor({ requestAnimationFrame: z = globalThis.requestAnimationFrame.bind(globalThis), cancelAnimationFrame: j = globalThis.cancelAnimationFrame.bind(globalThis) } = {}, { maxLoopJump: w = X } = {}) {
-    this.requestAnimationFrame = z, this.cancelAnimationFrame = j, this.maxLoopJump = w;
+  constructor({ requestAnimationFrame: j = globalThis.requestAnimationFrame.bind(globalThis), cancelAnimationFrame: w = globalThis.cancelAnimationFrame.bind(globalThis) } = {}, { maxLoopJump: d = N } = {}) {
+    this.requestAnimationFrame = j, this.cancelAnimationFrame = w, this.maxLoopJump = d;
   }
-  startLoop(z, j = {}) {
-    const w = j.frameDuration ?? (j.frameRate ? h / j.frameRate : undefined) ?? W;
-    let H = 0;
-    function Z(y, v) {
-      if (y > v)
-        return H -= w * (y - v), v;
-      return y;
-    }
-    const { maxLoopJump: $, requestAnimationFrame: K, cancelAnimationFrame: d } = this;
+  startLoop(j, w = {}) {
+    const d = w.frameDuration ?? (w.frameRate ? $ / w.frameRate : undefined) ?? Q;
     let B = 0;
-    const Q = (y) => {
-      V = K(Q);
-      const v = Z(Math.round((y + H - B) / w), $);
-      for (let G = 0;G < v; G++)
-        B += w, z(B, G === v - 1);
+    function W(h, v) {
+      if (h > v)
+        return B -= d * (h - v), v;
+      return h;
+    }
+    const { maxLoopJump: Y, requestAnimationFrame: G, cancelAnimationFrame: Z } = this;
+    let y = 0;
+    const H = (h) => {
+      K = G(H);
+      const v = W(Math.round((h + B - y) / d), Y);
+      for (let z = 0;z < v; z++)
+        y += d, j(y, z === v - 1);
     };
-    let V = K(Q);
+    let K = G(H);
     return () => {
-      d(V);
+      Z(K);
     };
   }
 }
@@ -40,7 +40,7 @@ function animate(canvas, frameRate) {
     return;
   }
   context.fillStyle = "black";
-  const fixedFrameLoop = new Y;
+  const fixedFrameLoop = new V;
   return fixedFrameLoop.startLoop((time, render) => {
     boxes.forEach((box) => {
       box.y = (box.y + box.height / 2) % canvas.height;

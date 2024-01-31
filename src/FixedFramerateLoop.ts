@@ -2,6 +2,7 @@
 /// <reference lib="dom" />
 /// <reference lib="dom.iterable" />
 
+import { ILoopExecutor } from ".";
 import { IFrameAnimationCallbacks } from "./IFrameAnimationCallbacks";
 import { LoopCallback } from "./Loop";
 
@@ -13,7 +14,7 @@ interface Config {
   maxLoopJump?: number;
 }
 
-export class FixedFramerateLoop {
+export class FixedFramerateLoop implements ILoopExecutor {
   private readonly requestAnimationFrame;
   private readonly cancelAnimationFrame;
   private readonly maxLoopJump;

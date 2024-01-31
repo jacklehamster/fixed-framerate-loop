@@ -1,4 +1,5 @@
 import { FixedFramerateLoop } from './FixedFramerateLoop';
+import { ILoopExecutor } from './ILoopExecutor';
 
 describe('FixedFramerateLoop', () => {
   let requestAnimationFrameMock: jest.Mock;
@@ -14,7 +15,7 @@ describe('FixedFramerateLoop', () => {
     it('should start and cancel the loop correctly', () => {
       const frameDuration = 100;
       const loopCallbackMock = jest.fn();
-      const frameLoop = new FixedFramerateLoop(
+      const frameLoop: ILoopExecutor = new FixedFramerateLoop(
         {
           requestAnimationFrame: requestAnimationFrameMock,
           cancelAnimationFrame: cancelAnimationFrameMock,

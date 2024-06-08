@@ -1,0 +1,29 @@
+{
+  "fileCounts": {
+    "src/Loop.ts": {
+      "correctCount": 3,
+      "totalCount": 3
+    },
+    "src/IFrameAnimationCallbacks.ts": {
+      "correctCount": 6,
+      "totalCount": 6
+    },
+    "src/ILoopExecutor.ts": {
+      "correctCount": 8,
+      "totalCount": 8
+    },
+    "src/index.ts": {
+      "correctCount": 10,
+      "totalCount": 10
+    },
+    "src/FixedFramerateLoop.ts": {
+      "correctCount": 102,
+      "totalCount": 102
+    }
+  },
+  "anys": [],
+  "percentage": 100,
+  "total": 129,
+  "covered": 129,
+  "uncovered": 0
+}
